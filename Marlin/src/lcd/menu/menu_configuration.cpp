@@ -198,9 +198,9 @@ void menu_advanced_settings();
     BACK_ITEM(MSG_CONFIGURATION);
     ACTION_ITEM(MSG_BLTOUCH_RESET, bltouch._reset);
     ACTION_ITEM(MSG_BLTOUCH_SELFTEST, bltouch._selftest);
-    ACTION_ITEM(MSG_BLTOUCH_DEPLOY, bltouch._deploy);
-    ACTION_ITEM(MSG_BLTOUCH_STOW, bltouch._stow);
-    ACTION_ITEM(MSG_BLTOUCH_SW_MODE, bltouch._set_SW_mode);
+    // ACTION_ITEM(MSG_BLTOUCH_DEPLOY, bltouch._deploy);
+    // ACTION_ITEM(MSG_BLTOUCH_STOW, bltouch._stow);
+    // ACTION_ITEM(MSG_BLTOUCH_SW_MODE, bltouch._set_SW_mode);
     #if ENABLED(BLTOUCH_LCD_VOLTAGE_MENU)
       CONFIRM_ITEM(MSG_BLTOUCH_5V_MODE, MSG_BLTOUCH_5V_MODE, MSG_BUTTON_CANCEL, bltouch._set_5V_mode, ui.goto_previous_screen, GET_TEXT(MSG_BLTOUCH_MODE_CHANGE));
       CONFIRM_ITEM(MSG_BLTOUCH_OD_MODE, MSG_BLTOUCH_OD_MODE, MSG_BUTTON_CANCEL, bltouch._set_OD_mode, ui.goto_previous_screen, GET_TEXT(MSG_BLTOUCH_MODE_CHANGE));
