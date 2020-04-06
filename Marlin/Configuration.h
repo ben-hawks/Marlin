@@ -484,10 +484,10 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  // Stock CR-10 tuned for 70C
-  #define DEFAULT_Kp 22.57
-  #define DEFAULT_Ki 1.72
-  #define DEFAULT_Kd 73.96
+  // CR 10 Hemera @ 200C
+  #define DEFAULT_Kp 32.45
+  #define DEFAULT_Ki 2.44
+  #define DEFAULT_Kd 107.77
 
   // Ultimaker
   //#define DEFAULT_Kp 22.2
@@ -741,7 +741,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 380.8 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 382.7 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1060,7 +1060,7 @@
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
 #define INVERT_X_DIR true
-#define INVERT_Y_DIR true
+#define INVERT_Y_DIR false
 #define INVERT_Z_DIR false
 
 // @section extruder
