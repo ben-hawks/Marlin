@@ -491,7 +491,6 @@
   //#define PID_AUTOTUNE_MENU     // Add PID auto-tuning to the "Advanced Settings" menu. (~250 bytes of PROGMEM)
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with gcode: M301 E[extruder number, 0-2]
-<<<<<<< HEAD
   #define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature
                                   // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
@@ -503,9 +502,9 @@
   //#define DEFAULT_Kd 107.77
 
   // Stock CR-10 100% Hotend fan, after tuning by http://www.cr10.fr/le-guide-malin-de-marlin/
-  #define DEFAULT_Kp 17.42
-  #define DEFAULT_Ki  1.27
-  #define DEFAULT_Kd 59.90
+  //#define DEFAULT_Kp 17.42
+  //#define DEFAULT_Ki  1.27
+  //#define DEFAULT_Kd 59.90
 
   // UPDATED: Stock CR-10s 100% Hotend fan at 235 deg with silicon cover
   //#define DEFAULT_Kp 22.14
@@ -526,8 +525,6 @@
   //#define DEFAULT_Kp 63.0
   //#define DEFAULT_Ki 2.25
   //#define DEFAULT_Kd 440
-=======
->>>>>>> marlin-upstream/2.0.x
 
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
@@ -536,9 +533,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  22.20
-    #define DEFAULT_Ki   1.08
-    #define DEFAULT_Kd 114.00
+    #define DEFAULT_Kp 17.42
+    #define DEFAULT_Ki  1.27
+    #define DEFAULT_Kd 59.90
   #endif
 #endif // PIDTEMP
 
@@ -575,7 +572,6 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-<<<<<<< HEAD
   //Stock CR-10 Bed Tuned for 70C
   #define DEFAULT_bedKp 426.68
   #define DEFAULT_bedKi 78.92
@@ -586,13 +582,6 @@
   //#define DEFAULT_bedKp 10.00
   //#define DEFAULT_bedKi .023
   //#define DEFAULT_bedKd 305.4
-=======
-  // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
-  // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 10.00
-  #define DEFAULT_bedKi .023
-  #define DEFAULT_bedKd 305.4
->>>>>>> marlin-upstream/2.0.x
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -862,13 +851,9 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-<<<<<<< HEAD
-  #define JUNCTION_DEVIATION_MM 0.08  // (mm) Distance from real junction edge
-=======
-  #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.08 // (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
->>>>>>> marlin-upstream/2.0.x
 #endif
 
 /**
@@ -1446,13 +1431,8 @@
   #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
 #endif
 
-<<<<<<< HEAD
-// Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (30*60)
-=======
 // Homing speeds (mm/min)
 #define HOMING_FEEDRATE_XY (50*60)
->>>>>>> marlin-upstream/2.0.x
 #define HOMING_FEEDRATE_Z  (4*60)
 
 // Validate that endstops are triggered on homing moves
