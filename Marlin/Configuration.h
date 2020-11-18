@@ -131,7 +131,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "CR-10 Archer (SKR 1.4)"
+#define CUSTOM_MACHINE_NAME "CR-10 Archer - SKR 1.4"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -533,9 +533,12 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 17.42
-    #define DEFAULT_Ki  1.27
-    #define DEFAULT_Kd 59.90
+//    #define DEFAULT_Kp 17.42
+//    #define DEFAULT_Ki  1.27
+//    #define DEFAULT_Kd 59.90
+    #define DEFAULT_Kp 20.81
+    #define DEFAULT_Ki  1.45
+    #define DEFAULT_Kd 74.85
   #endif
 #endif // PIDTEMP
 
@@ -573,9 +576,14 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   //Stock CR-10 Bed Tuned for 70C
-  #define DEFAULT_bedKp 426.68
-  #define DEFAULT_bedKi 78.92
-  #define DEFAULT_bedKd 576.71
+  //#define DEFAULT_bedKp 426.68
+  //#define DEFAULT_bedKi 78.92
+  //#define DEFAULT_bedKd 576.71
+
+  //CR-10 Bed Autotuned w/ Mirror Bed
+  #define DEFAULT_bedKp 647.32
+  #define DEFAULT_bedKi 115.89
+  #define DEFAULT_bedKd 2410.39
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
@@ -780,7 +788,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 382.7 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93.0 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -800,7 +808,7 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 5000 }
+#define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 500 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1165,12 +1173,20 @@
 #define Y_BED_SIZE 300
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -20
-#define Y_MIN_POS -10
+//#define X_MIN_POS -20
+//#define Y_MIN_POS -10
+//#define Z_MIN_POS 0
+//#define X_MAX_POS X_BED_SIZE + 20
+//#define Y_MAX_POS Y_BED_SIZE + 10
+//#define Z_MAX_POS 400
+
+#define X_MIN_POS 0
+#define Y_MIN_POS 0
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE + 20
-#define Y_MAX_POS Y_BED_SIZE + 10
+#define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 400
+
 
 /**
  * Software Endstops
@@ -1542,8 +1558,8 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 210
-#define PREHEAT_1_TEMP_BED     70
+#define PREHEAT_1_TEMP_HOTEND 200
+#define PREHEAT_1_TEMP_BED     60
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PETG"

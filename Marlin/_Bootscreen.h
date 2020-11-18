@@ -31,7 +31,7 @@
  * http://marlinfw.org/tools/u8glib/converter.html
  */
 
-#define CUSTOM_BOOTSCREEN_TIMEOUT 750
+#define CUSTOM_BOOTSCREEN_TIMEOUT 2500
 /**
  * Made with Marlin Bitmap Converter
  * https://marlinfw.org/tools/u8glib/converter.html
