@@ -143,6 +143,9 @@
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
 #define EXTRUDERS 1
 
+// Workaround/Fix/Whatever for SKR 1.4 (& Turbo) hotend fan selection (FAN1_PIN in _adv.h)
+#define HOTENDS EXTRUDERS
+
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
 
