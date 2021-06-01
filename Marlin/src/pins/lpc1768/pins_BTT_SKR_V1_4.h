@@ -31,9 +31,8 @@
 
 //
 // SD Connection
-// MODIFIED: Original = LCD, Updated to ONBOARD to access via Octoprint/USBMount
 #ifndef SDCARD_CONNECTION
-  #define SDCARD_CONNECTION                  ONBOARD 
+  #define SDCARD_CONNECTION                  LCD 
 #endif
 
 //

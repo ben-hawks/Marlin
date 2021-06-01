@@ -1345,8 +1345,9 @@
    *
    * :[ 'LCD', 'ONBOARD', 'CUSTOM_CABLE' ]
    */
-  //#define SDCARD_CONNECTION LCD
-
+  // MODIFIED: Original = LCD, Updated to ONBOARD to access via Octoprint/USBMount
+  #define SDCARD_CONNECTION ONBOARD
+  
 #endif // SDSUPPORT
 
 /**
